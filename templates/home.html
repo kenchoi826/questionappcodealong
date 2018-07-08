@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}home{% endblock %}
+
+{% block contents %}
+    
+    <div class="container theme-showcase" role="main">
+      {% with messages = get_flashed_messages() %}
+      {{messages[0]}}
+      {% endwith %}
+      <div class="page-header">
+        <h1>Answered Questions</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          {% for answered in all_answered_results %}
+          <div class="list-group">
+            <a href="{{url_for('question',question_id = answered.id)}}" class="list-group-item">
+              <h4 class="list-group-item-heading">{{answered.question_text}}</h4>
+              <p class="list-group-item-text">Asked by: {{answered.asked_by}}</p>
+              <p class="list-group-item-text">Answered by: {{answered.answered_by}}</p>
+            </a>
+          {% endfor %}
+            
+          </div>
+        </div><!-- /.col-lg-12 -->
+      </div>
+
+    </div> <!-- /container -->
+{% endblock %}

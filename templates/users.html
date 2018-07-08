@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}users{% endblock %}
+
+{% block contents %}
+
+    
+    <div class="container theme-showcase" role="main">
+
+      <div class="page-header">
+        <h1>Users</h1>
+        <h6>Click to promote to expert</h6>
+      </div>
+      {% for user in users_result %}
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="list-group">
+            <a href="{% if user.expert == 0 %}
+            {{url_for('promote', user_id = user['id'])}}
+            {% else %}
+            {{url_for('demote', user_id = user['id'])}}
+            {% endif %}
+            " 
+            class="list-group-item {% if user.expert == 1%} active {% endif %}">
+              <h4 class="list-group-item-heading">name: {{user.name}}</h4>
+            </a>
+          </div>
+        </div><!-- /.col-lg-12 -->
+      </div>
+      {% endfor %}
+    </div> <!-- /container -->
+
+{% endblock %}

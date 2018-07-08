@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Questions{% endblock %}
+
+{% block contents %}
+
+    <div class="container theme-showcase" role="main">
+
+      <div class="jumbotron">
+        <h1>Question: {{question_result.question_text}}</h1>
+        <p>Answer: {{question_result.answer_text}}</p>
+        <p><a class="btn btn-primary btn-lg">Asked By: {{question_result.asked_by}}</a></p>
+        <p><a class="btn btn-primary btn-lg">Answered By: {{question_result.answered_by}}</a></p>
+      </div>
+
+    </div> <!-- /container -->
+{% endblock %}
