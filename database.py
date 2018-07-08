@@ -14,7 +14,7 @@ from flask import g
 #     return g.sqlite_db
 
 def connect_db():
-    conn = psycopg2.connect('postgres://wkzzgxgnbxbglf:fe0898ec5c286d3a2f3e445e79769c1c30557058648ab5c47636df84312d14da@ec2-54-227-243-210.compute-1.amazonaws.com:5432/d420al23kstrpk',cursor_factory=DictCursor)
+    conn = psycopg2.connect('postgres://nxrbrctpsxrilx:89469b83e6202a20d1aa3406c671ff584e98dd903e2ae51d93aa12af07c4ae94@ec2-54-227-243-210.compute-1.amazonaws.com:5432/d863hfc9uheorl',cursor_factory=DictCursor)
     conn.autocommit = True
     sql = conn.cursor()
     return conn, sql
