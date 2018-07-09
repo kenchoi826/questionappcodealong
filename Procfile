@@ -1,1 +1,1 @@
-waitress-serve --listen=*:8000 myapp.wsgi:application app: app
+web: guincorn app: app
